@@ -1,12 +1,13 @@
 package com.klef.fsad.exam;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-public class Payment {
-
+@Table(name="payment")
+public class Payment 
+{
     @Id
     private int id;
     private String name;
@@ -15,6 +16,15 @@ public class Payment {
     private double amount;
 
     public Payment() {}
+
+    public Payment(int id, String name, String date, String status, double amount) 
+    {
+        this.id = id;
+        this.name = name;
+        this.date = date;
+        this.status = status;
+        this.amount = amount;
+    }
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
@@ -31,5 +41,3 @@ public class Payment {
     public double getAmount() { return amount; }
     public void setAmount(double amount) { this.amount = amount; }
 }
-
-
